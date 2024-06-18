@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>JoeMi</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+<style>
+    *{
+        border:0;
+        margin:0;
+        padding:0;
+        font-family: 'Cairo', sans-serif;
+        box-sizing: border-box;
+    }
+    header{
+        width:100%;
+        height:200px;
+        background:#04519C;
+    
+    }
+    header img{
+        width:230px;
+        height:auto;
+        display:block;
+        margin:auto
+    }
+    .arrow-down {
+        width: 0; 
+        height: 0; 
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        margin:auto;
+        border-top: 30px solid #04519C;
+        margin-top:2px;
+    }
+
+    .content{
+        width:768px;
+        min-height:400px;
+        overflow:hidden;
+        margin:auto;
+        /* background:red; */
+        margin-top:30px;
+        margin-bottom:30px;
+    }
+
+    .content .ar{
+        width:50%;
+        float:right;
+        padding:0 1%;
+        text-align:right;
+        color:#333
+    }
+    .content .en{
+        width:50%;
+        float:left;
+        padding:0 1%;
+        text-align:left;
+        color:#333
+    }
+
+    .content .en button,
+    .content .ar button{
+        width:200px;
+        height:45px;
+        background:#04519C;
+        color:#FFF;
+        font-weight:bold;
+        font-size:17px;
+        border-radius:5px;
+        margin:20px 0;
+        cursor:pointer;
+    }
+
+    footer{
+        width:100%;
+        height:270px;
+        background:#04519C;
+        padding:0 0 40px 0;
+        box-sizing:border-box;
+    }
+    footer .container-footer{
+        text-align:center;
+        width:1000px;
+        margin:auto
+    }
+
+    footer .container-footer .footer-img{
+        width:110px;
+        margin:auto;
+        display:block;
+        position:relative;
+        top:-56px
+    }
+
+    footer a img{
+        width:100%;
+        height:100%;              
+    }
+
+    footer .inforamtion{
+        width:280px;
+        height:35px;
+        float:none;
+        margin:auto;
+        /* background:red; */
+        margin-top:10px;
+    }
+    footer .inforamtion .socialmedia{
+        font-size:25px;
+        color:#04519C;
+        /* background:#FFF; */
+        width:35px;
+        height:35px;
+        display:block;
+        border-radius:50%;
+        text-align:center;
+        line-height:35px;
+        float:left;
+        margin-right:10px;
+    }
+    footer .inforamtion .socialmedia:nth-of-type(5){ margin-right:0; }
+    .containerSocialmedia{
+        width:225px;
+        margin:auto;
+    }
+
+
+    footer h3{
+        letter-spacing: 6px;
+        float:left;
+        color:#FFF;
+        margin-left:10px;
+    }
+    footer h4{
+        font-size:18px;
+        color:#FFF;
+        clear:both;
+        margin:auto;
+        margin-top:10px;
+        text-align:center;
+    }
+    footer h5{
+        font-size:20px;
+        color:#F08120;
+        margin:auto;
+        clear:both;
+        margin-top:5px;
+        text-align:center;
+        
+    }
+    footer h5 a{
+        color:#F08120;
+        text-decoration:none;
+        letter-spacing:4px
+        
+    }
+    footer h6{
+        font-size:18px;
+        color:#FFF;
+        text-align:center;
+        margin-top:10px
+    }
+
+    u + #body a {
+                         color: inherit;
+                         text-decoration: none;
+                         font-size: inherit;
+                         font-family: inherit;
+                         font-weight: inherit;
+                         line-height: inherit;
+                        }
+
+
+                        u + #body img {
+
+                            top: inherit;
+                            position: inherit;
+                           }
+    
+</style>
+</head>
+
+<body id="body">
+       <header>
+           <%= image_tag attachments['img1.png'].url, alt: ' ' -%>
+           <div class="arrow-down"></div>
+       </header>
+       <div class="content">
+       <div class="en">
+           <h2> New Ticket Requested By (<%=  @ticket_data.requested_by %>)</h2>
+           <p>With Subject  (<%= @ticket_data.subject %>) At Project (<%=  @project_name %>), At Department (<%=  @department_name %>)  </p>
+           <p>(<%= @ticket_data.issue %>)</p>
+           <h3>Joe Mi team.</h3>
+           <button>Go To Application</button>
+       </div>
+   </div>
+    
+       <footer>
+           <div class="container-footer">
+                <%= image_tag attachments['logo_v2.png'].url, alt: 'image', class:'footer-img' -%>
+                <div class="inforamtion">
+                    <div class="row">
+                        <!-- <a href="#" class="socialmedia"><i class="fab fa fa-instagram"></i> <img src="@/assets/instagram.png" alt=""></a> -->
+                        <div class="containerSocialmedia">
+                       
+                        <a href ="https://instagram.com/joemi?igshid=p4d2gxq5anv9">
+                         <%= image_tag attachments['instagram.png'].url, alt: 'image', class: 'socialmedia' -%> 
+                        </a>
+ 
+                       
+                        <a href = "https://www.snapchat.com/add/joemi">
+                        <%= image_tag attachments['snapchat.png'].url, alt: 'image', class: 'socialmedia' -%>
+                        </a>                       
+ 
+                        <a href ="https://www.linkedin.com/company/joemi">
+                         <%= image_tag attachments['linkedin.png'].url, alt: 'image', class: 'socialmedia' -%>
+                        </a>
+ 
+                        <a href ="https://www.facebook.com/joemisa/">
+                         <%= image_tag attachments['facebook.png'].url, alt: 'image', class: 'socialmedia' -%>
+                        </a>
+ 
+                        <a href ="https://twitter.com/joemi?s=09">
+                         <%= image_tag attachments['twitter.png'].url, alt: 'image', class: 'socialmedia' -%>
+                        </a>
+ 
+                        </div>
+                        
+                        <h5> <a href="https://joemi.net/" target="_blank">https://joemi.net</a></h5>
+                        <h6>All Rights Reseved to NAT</h6>
+                    </div>
+                </div>
+                
+           </div>
+           
+       </footer>
+    </body>
+
+</html>
